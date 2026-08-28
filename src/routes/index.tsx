@@ -358,9 +358,24 @@ function TylerDigosSite() {
       {/* ABOUT */}
       <section
         id="about"
-        style={{ scrollMarginTop: "80px", borderBottom: `1px solid ${colors.hairline}` }}
-        className="max-w-5xl mx-auto px-6 py-24"
+        style={{ scrollMarginTop: "80px", borderBottom: `1px solid ${colors.hairline}`, isolation: "isolate" }}
+        className="relative max-w-5xl mx-auto px-6 py-24"
       >
+        {/* Soft glow behind card */}
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            top: "15%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "85%",
+            height: "70%",
+            background: `radial-gradient(ellipse at center, ${colors.cream} 0%, transparent 65%)`,
+            filter: "blur(50px)",
+            opacity: 0.12,
+            zIndex: -1,
+          }}
+        />
         <SectionLabel>About</SectionLabel>
         <div
           className="rounded-3xl p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8 items-start"
@@ -388,12 +403,27 @@ function TylerDigosSite() {
       {/* STORY */}
       <section
         id="story"
-        style={{ scrollMarginTop: "80px", borderBottom: `1px solid ${colors.hairline}` }}
-        className="max-w-5xl mx-auto px-6 py-24"
+        style={{ scrollMarginTop: "80px", borderBottom: `1px solid ${colors.hairline}`, isolation: "isolate" }}
+        className="relative max-w-5xl mx-auto px-6 py-24"
       >
+        {/* Soft glow behind card */}
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            top: "15%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "85%",
+            height: "70%",
+            background: `radial-gradient(ellipse at center, ${colors.cream} 0%, transparent 65%)`,
+            filter: "blur(50px)",
+            opacity: 0.12,
+            zIndex: -1,
+          }}
+        />
         <SectionLabel>Early Life &amp; Story</SectionLabel>
         <div
-          className="rounded-3xl p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+          className="relative rounded-3xl p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8 items-start"
           style={{ background: colors.card, border: `1px solid ${colors.cardBorder}` }}
         >
           <div className="w-full md:w-64 aspect-[4/5] rounded-2xl overflow-hidden shrink-0">
@@ -417,6 +447,14 @@ function TylerDigosSite() {
               ))}
             </div>
           </div>
+          {/* Fading connector line to Companies heading */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2 top-full w-px h-32"
+            style={{
+              background: `linear-gradient(to bottom, transparent, ${colors.muted}, transparent)`,
+              opacity: 0.5,
+            }}
+          />
         </div>
       </section>
 
@@ -473,9 +511,24 @@ function TylerDigosSite() {
       <section
         id="results"
         ref={dashRef}
-        style={{ scrollMarginTop: "80px", borderBottom: `1px solid ${colors.hairline}` }}
-        className="max-w-5xl mx-auto px-6 py-24"
+        style={{ scrollMarginTop: "80px", borderBottom: `1px solid ${colors.hairline}`, isolation: "isolate" }}
+        className="relative max-w-5xl mx-auto px-6 py-24"
       >
+        {/* Soft glow behind results */}
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            top: "10%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "90%",
+            height: "80%",
+            background: `radial-gradient(ellipse at center, ${colors.cream} 0%, transparent 65%)`,
+            filter: "blur(60px)",
+            opacity: 0.12,
+            zIndex: -1,
+          }}
+        />
         <SectionLabel>Results</SectionLabel>
         <h2 className="text-3xl md:text-4xl mb-4 tracking-wide" style={{ color: colors.cream, ...serif }}>
           Quota Attainment — Yotpo
