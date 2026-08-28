@@ -137,8 +137,14 @@
     border-color: var(--color-border);
   }
 
+  html,
   body {
-    background-color: var(--color-background);
+    /* Site-wide dark background (#0a0a0a) — enforced at the root so the page
+       can never render as a white page before or after hydration. */
+    background-color: #0a0a0a;
+  }
+
+  body {
     color: var(--color-foreground);
   }
 }
