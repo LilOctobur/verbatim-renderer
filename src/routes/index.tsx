@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Instagram, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -151,7 +151,7 @@ function StatCard({ stat, inView }: { stat: (typeof ecommerceStats)[number]; inV
   );
 }
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <div
       className="text-[11px] uppercase tracking-[0.35em] mb-6"
