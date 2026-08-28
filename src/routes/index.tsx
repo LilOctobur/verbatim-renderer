@@ -235,6 +235,7 @@ function TylerDigosSite() {
       <style>{`
         html, body { background-color: ${colors.bg} !important; margin: 0; }
         html { scroll-behavior: smooth; }
+        * { font-family: 'Inter', system-ui, sans-serif; box-sizing: border-box; }
         a { text-decoration: none; }
         .nav-link:hover { color: ${colors.cream} !important; }
       `}</style>
