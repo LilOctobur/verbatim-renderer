@@ -111,7 +111,7 @@ function useInView(threshold = 0.3) {
   return [ref, inView] as const;
 }
 
-function useCountUp(target: number, inView: boolean, duration = 1400) {
+function useCountUp(target: number, inView: boolean, duration = 2800) {
   const [value, setValue] = useState(0);
   useEffect(() => {
     if (!inView) return;
@@ -131,7 +131,7 @@ function useCountUp(target: number, inView: boolean, duration = 1400) {
 }
 
 function StatCard({ stat, inView }: { stat: (typeof ecommerceStats)[number]; inView: boolean }) {
-  const count = useCountUp(stat.value, inView);
+  const count = useCountUp(stat.value, inView, 2800);
   return (
     <div>
       <div className="text-2xl" style={{ color: colors.cream, ...serif }}>
@@ -178,8 +178,8 @@ function Bar({ q, i, inView }: { q: (typeof quarters)[number]; i: number; inView
           className="w-full transition-all ease-out"
           style={{
             height: inView ? `${h}%` : "0%",
-            transitionDuration: "900ms",
-            transitionDelay: `${i * 140}ms`,
+            transitionDuration: "2200ms",
+            transitionDelay: `${i * 250}ms`,
             background:
               q.value >= 110
                 ? `linear-gradient(180deg, ${colors.cream} 0%, ${colors.body} 100%)`
@@ -347,9 +347,10 @@ function TylerDigosSite() {
         <a
           href="#about"
           aria-label="Scroll to About section"
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 transition-colors animate-bounce nav-link"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 transition-colors animate-bounce nav-link flex flex-col items-center"
           style={linkStyle}
         >
+          <ChevronDown className="w-6 h-6 -mb-2" />
           <ChevronDown className="w-6 h-6" />
         </a>
       </header>
