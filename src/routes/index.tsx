@@ -98,11 +98,11 @@ const ecommerceStats = [
 // ─────────────────────────────────────────────
 
 function useInView(threshold = 0.3) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
     const obs = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setInView(true),
+      ([entry]) => entry?.isIntersecting && setInView(true),
       { threshold }
     );
     if (ref.current) obs.observe(ref.current);
@@ -111,13 +111,13 @@ function useInView(threshold = 0.3) {
   return [ref, inView] as const;
 }
 
-function useCountUp(target, inView, duration = 1400) {
+function useCountUp(target: number, inView: boolean, duration = 1400) {
   const [value, setValue] = useState(0);
   useEffect(() => {
     if (!inView) return;
-    let start = null;
-    let frame;
-    const step = (timestamp) => {
+    let start: number | null = null;
+    let frame: number;
+    const step = (timestamp: number) => {
       if (!start) start = timestamp;
       const progress = Math.min((timestamp - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
@@ -130,7 +130,7 @@ function useCountUp(target, inView, duration = 1400) {
   return value;
 }
 
-function StatCard({ stat, inView }) {
+function StatCard({ stat, inView }: { stat: (typeof ecommerceStats)[number]; inView: boolean }) {
   const count = useCountUp(stat.value, inView);
   return (
     <div>
@@ -151,7 +151,7 @@ function StatCard({ stat, inView }) {
   );
 }
 
-function SectionLabel({ children }) {
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <div
       className="text-[11px] uppercase tracking-[0.35em] mb-6"
@@ -162,7 +162,7 @@ function SectionLabel({ children }) {
   );
 }
 
-function Bar({ q, i, inView }) {
+function Bar({ q, i, inView }: { q: (typeof quarters)[number]; i: number; inView: boolean }) {
   const max = 130;
   const h = (q.value / max) * 100;
   return (
