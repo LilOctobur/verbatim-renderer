@@ -6,6 +6,7 @@ import aboutAsset from "@/assets/about-photo.jpg.asset.json";
 import storyAsset from "@/assets/story-photo.jpg.asset.json";
 import yotpoAsset from "@/assets/yotpo-logo.png.asset.json";
 import kethAsset from "@/assets/keth-logo.png.asset.json";
+import tdMonogramAsset from "@/assets/td-monogram.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: TylerDigosSite,
@@ -75,7 +76,7 @@ const companies = [
   },
   {
     name: "Ecommerce & Digital Marketing Specialist",
-    logo: "/monogram-td.svg",
+    logo: tdMonogramAsset.url,
     logoBg: "#0A0A0A",
     logoInitial: "E",
     description:
