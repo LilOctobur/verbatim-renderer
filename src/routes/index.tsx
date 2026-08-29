@@ -329,7 +329,7 @@ function TylerDigosSite() {
           src={heroAsset.url}
           alt="Tyler Digos"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "center 20%" }}
+          style={{ objectPosition: "35% 18%" }}
         />
         {/* Replace src="/hero-photo.jpg" with your actual photo path/URL */}
         <div
@@ -394,6 +394,7 @@ function TylerDigosSite() {
               src={aboutAsset.url}
               alt="Tyler Digos"
               className="w-full h-full object-cover"
+              style={{ objectPosition: "72% center" }}
             />
             {/* Replace src="/about-photo.jpg" with your actual photo path/URL */}
           </div>
@@ -439,7 +440,7 @@ function TylerDigosSite() {
               src={storyAsset.url}
               alt="Tyler Digos"
               className="w-full h-full object-cover"
-              style={{ objectPosition: "top" }}
+              style={{ objectPosition: "center 22%" }}
             />
             {/* Replace src="/story-photo.jpg" with your actual photo path/URL */}
           </div>
@@ -579,21 +580,25 @@ function TylerDigosSite() {
         </h2>
         <div className="flex flex-wrap gap-4 mb-16">
           <a
-            href="#"
+            href="https://www.linkedin.com/in/tylerdigos/"
             className="flex items-center gap-2 px-5 py-3 rounded-sm text-sm tracking-wide transition-colors"
+            target="_blank"
+            rel="noreferrer"
             style={{ border: `1px solid ${colors.divider}`, color: colors.cream }}
           >
             <Linkedin className="w-4 h-4" /> LinkedIn
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/tylerdigos"
             className="flex items-center gap-2 px-5 py-3 rounded-sm text-sm tracking-wide transition-colors"
+            target="_blank"
+            rel="noreferrer"
             style={{ border: `1px solid ${colors.divider}`, color: colors.cream }}
           >
             <Instagram className="w-4 h-4" /> Instagram
           </a>
           <a
-            href="#"
+            href="mailto:Tyleramd1017@gmail.com"
             className="flex items-center gap-2 px-5 py-3 rounded-sm text-sm tracking-wide transition-colors"
             style={{ border: `1px solid ${colors.divider}`, color: colors.cream }}
           >
