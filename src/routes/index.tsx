@@ -484,9 +484,9 @@ function TylerDigosSite() {
               style={{ background: colors.card, border: `1px solid ${colors.cardBorder}` }}
             >
               <div
-                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden"
+                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden p-3"
                 style={{
-                  background: colors.bg,
+                  background: c.logoBg ?? colors.bg,
                   border: `1px solid ${colors.divider}`,
                   color: colors.cream,
                   ...serif,
@@ -496,7 +496,7 @@ function TylerDigosSite() {
                   <img
                     src={c.logo}
                     alt={`${c.name} logo`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 ) : (
                   c.logoInitial
