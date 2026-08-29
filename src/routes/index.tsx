@@ -49,41 +49,44 @@ const aboutText =
   "Tyler Digos is a Canadian sales professional, e-commerce operator, and founder. Tyler is focused on building real, self-funded ventures in fashion and commerce, and sharpening his craft in tech sales at Yotpo.";
 
 const storyText = [
-  "Selling has been part of my life since I was a kid. It started with sneakers and streetwear — Supreme, Bape, whatever I could get my hands on before it sold out — flipping pieces long before I understood the word \"resale\" was a business model.",
-  "At 16, that turned into something more ambitious: my brother and I started our own cut-and-sew fashion brand, designing and producing our own pieces from scratch. It was scrappy and self-taught, but it's where I first understood what it actually takes to build something — not just sell it.",
-  "After high school, I spent time working construction — drywall, through the union. It wasn't glamorous, but it taught me a different kind of discipline, and it's stuck with me since.",
-  "From there, I launched my own e-commerce brand in women's fashion, where I learned the full stack of running a DTC business: sourcing, paid acquisition, fulfillment, customer retention — the parts nobody sees on the outside.",
-  "Eventually, I brought everything full circle into tech sales, joining Yotpo as a Sales Development Representative — now selling the tools that power the same kind of e-commerce brands I used to run.",
+  "Selling has been part of my life since I was a kid. It started with sneakers and streetwear, Supreme, Bape, whatever I could get my hands on before it sold out, flipping pieces long before I understood the word \"resale\" was a business model.",
+  "At 16, that turned into something more ambitious: my brother and I started our own cut-and-sew fashion brand, designing and producing our own pieces from scratch. It was scrappy and self-taught, but it's where I first understood what it actually takes to build something, not just sell it.",
+  "After high school, I spent time working construction, drywall, through the union. It wasn't glamorous, but it taught me a different kind of discipline, and it's stuck with me since.",
+  "From there, I launched my own e-commerce brand in women's fashion, where I learned the full stack of running a DTC business: sourcing, paid acquisition, fulfillment, customer retention, the parts nobody sees on the outside.",
+  "Eventually, I brought everything full circle into tech sales, joining Yotpo as a Sales Development Representative, now selling the tools that power the same kind of e-commerce brands I used to run.",
 ];
 
 const companies = [
   {
     name: "Yotpo — Global Demand Generation",
-    logo: null, // set to an image path/URL to use a real logo instead of the initial
+    logo: yotpoAsset.url,
+    logoBg: "#1E2AAE",
     logoInitial: "Y",
     description:
-      "Sales Development Representative at Yotpo, an e-commerce and retention marketing platform — selling the tools that power modern DTC brands. Role expanding as scope evolves.",
+      "Sales Development Representative at Yotpo, an e-commerce and retention marketing platform, selling the tools that power modern DTC brands. Role expanding as scope evolves.",
   },
   {
     name: "Keth Official — Co-Founder",
-    logo: null,
+    logo: kethAsset.url,
+    logoBg: "#ffffff",
     logoInitial: "K",
     description:
-      "Co-Founder of Keth Official, a direct-to-consumer fashion brand built and scaled independently — covering sourcing, paid acquisition, and fulfillment from the ground up.",
+      "Co-Founder of Keth Official, a direct-to-consumer fashion brand built and scaled independently, covering sourcing, paid acquisition, and fulfillment from the ground up.",
   },
   {
     name: "Ecommerce & Digital Marketing Specialist",
-    logo: null, // drop your icon path/URL here, e.g. "/ecommerce-icon.png"
+    logo: "/monogram-td.svg",
+    logoBg: "#0A0A0A",
     logoInitial: "E",
     description:
-      "Self-employed, Jan 2024 – Nov 2025 (1 yr 11 mos). Built and managed multiple direct-to-consumer brands from the ground up — overseeing product research, supplier sourcing, store development, Meta ad campaign execution, customer service, and fulfillment logistics. Developed SOPs for each area of the business to ensure smooth, scalable operations.",
+      "Self-employed, Jan 2024 to Nov 2025 (1 yr 11 mos). Built and managed multiple direct-to-consumer brands from the ground up, overseeing product research, supplier sourcing, store development, Meta ad campaign execution, customer service, and fulfillment logistics. Developed SOPs for each area of the business to ensure smooth, scalable operations.",
   },
 ];
 
 const quarters = [
   { label: "Q1", value: 117 },
   { label: "Q2", value: 100 },
-  { label: "Q3", value: 108, note: "Jul 100% · Aug 117% (in progress)" },
+  { label: "Q3", value: 121, note: "Jul 100%, Aug 142% (quarter closes Monday)" },
 ];
 
 const avgAttainment =
