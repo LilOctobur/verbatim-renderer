@@ -246,6 +246,10 @@ function TylerDigosSite() {
         * { font-family: 'Inter', system-ui, sans-serif; box-sizing: border-box; }
         a { text-decoration: none; }
         .nav-link:hover { color: ${colors.cream} !important; }
+        @media (min-width: 768px) {
+          .hero-header { height: 85vh; min-height: 560px; }
+          .hero-img { object-position: 50% 12% !important; }
+        }
       `}</style>
 
       {/* STICKY NAV */}
