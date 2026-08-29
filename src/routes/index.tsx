@@ -257,14 +257,35 @@ function TylerDigosSite() {
         }}
       >
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="text-lg tracking-wide" style={{ color: colors.cream, ...serif }}>
-            T·D
-          </div>
+          {/* Left links (desktop) / spacer (mobile) */}
           <div
-            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em]"
+            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1"
             style={serif}
           >
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 2).map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="nav-link transition-colors"
+                style={linkStyle}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <div className="md:hidden w-6" />
+          <div
+            className="text-lg tracking-wide text-center"
+            style={{ color: colors.cream, ...serif }}
+          >
+            T·D
+          </div>
+          {/* Right links (desktop) / hamburger (mobile) */}
+          <div
+            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1 justify-end"
+            style={serif}
+          >
+            {navLinks.slice(2).map((link) => (
               <a
                 key={link.href}
                 href={link.href}
