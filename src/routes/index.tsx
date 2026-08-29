@@ -6,6 +6,7 @@ import aboutAsset from "@/assets/about-photo.jpg.asset.json";
 import storyAsset from "@/assets/story-photo.jpg.asset.json";
 import yotpoAsset from "@/assets/yotpo-logo.png.asset.json";
 import kethAsset from "@/assets/keth-logo.png.asset.json";
+import tdMonogramAsset from "@/assets/td-monogram.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: TylerDigosSite,
@@ -75,7 +76,7 @@ const companies = [
   },
   {
     name: "Ecommerce & Digital Marketing Specialist",
-    logo: "/monogram-td.svg",
+    logo: tdMonogramAsset.url,
     logoBg: "#0A0A0A",
     logoInitial: "E",
     description:
@@ -246,6 +247,10 @@ function TylerDigosSite() {
         * { font-family: 'Inter', system-ui, sans-serif; box-sizing: border-box; }
         a { text-decoration: none; }
         .nav-link:hover { color: ${colors.cream} !important; }
+        @media (min-width: 768px) {
+          .hero-header { height: 85vh; min-height: 560px; }
+          .hero-img { object-position: 50% 12% !important; }
+        }
       `}</style>
 
       {/* STICKY NAV */}
@@ -257,14 +262,35 @@ function TylerDigosSite() {
         }}
       >
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="text-lg tracking-wide" style={{ color: colors.cream, ...serif }}>
-            T·D
-          </div>
+          {/* Left links (desktop) / spacer (mobile) */}
           <div
-            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em]"
+            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1"
             style={serif}
           >
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 2).map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="nav-link transition-colors"
+                style={linkStyle}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <div className="md:hidden w-6" />
+          <div
+            className="text-lg tracking-wide text-center"
+            style={{ color: colors.cream, ...serif }}
+          >
+            T·D
+          </div>
+          {/* Right links (desktop) / hamburger (mobile) */}
+          <div
+            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1 justify-end"
+            style={serif}
+          >
+            {navLinks.slice(2).map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -324,11 +350,11 @@ function TylerDigosSite() {
       </nav>
 
       {/* HERO */}
-      <header className="relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+      <header className="hero-header relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
         <img
           src={heroAsset.url}
           alt="Tyler Digos"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="hero-img absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "35% 18%" }}
         />
         {/* Replace src="/hero-photo.jpg" with your actual photo path/URL */}
@@ -485,7 +511,7 @@ function TylerDigosSite() {
               style={{ background: colors.card, border: `1px solid ${colors.cardBorder}` }}
             >
               <div
-                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden p-3"
+                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden p-1"
                 style={{
                   background: c.logoBg ?? colors.bg,
                   border: `1px solid ${colors.divider}`,
