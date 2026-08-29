@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Instagram, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
+import heroAsset from "@/assets/hero-photo.jpg.asset.json";
+import aboutAsset from "@/assets/about-photo.jpg.asset.json";
+import storyAsset from "@/assets/story-photo.jpg.asset.json";
+import yotpoAsset from "@/assets/yotpo-logo.png.asset.json";
+import kethAsset from "@/assets/keth-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: TylerDigosSite,
@@ -44,41 +49,44 @@ const aboutText =
   "Tyler Digos is a Canadian sales professional, e-commerce operator, and founder. Tyler is focused on building real, self-funded ventures in fashion and commerce, and sharpening his craft in tech sales at Yotpo.";
 
 const storyText = [
-  "Selling has been part of my life since I was a kid. It started with sneakers and streetwear — Supreme, Bape, whatever I could get my hands on before it sold out — flipping pieces long before I understood the word \"resale\" was a business model.",
-  "At 16, that turned into something more ambitious: my brother and I started our own cut-and-sew fashion brand, designing and producing our own pieces from scratch. It was scrappy and self-taught, but it's where I first understood what it actually takes to build something — not just sell it.",
-  "After high school, I spent time working construction — drywall, through the union. It wasn't glamorous, but it taught me a different kind of discipline, and it's stuck with me since.",
-  "From there, I launched my own e-commerce brand in women's fashion, where I learned the full stack of running a DTC business: sourcing, paid acquisition, fulfillment, customer retention — the parts nobody sees on the outside.",
-  "Eventually, I brought everything full circle into tech sales, joining Yotpo as a Sales Development Representative — now selling the tools that power the same kind of e-commerce brands I used to run.",
+  "Selling has been part of my life since I was a kid. It started with sneakers and streetwear, Supreme, Bape, whatever I could get my hands on before it sold out, flipping pieces long before I understood the word \"resale\" was a business model.",
+  "At 16, that turned into something more ambitious: my brother and I started our own cut-and-sew fashion brand, designing and producing our own pieces from scratch. It was scrappy and self-taught, but it's where I first understood what it actually takes to build something, not just sell it.",
+  "After high school, I spent time working construction, drywall, through the union. It wasn't glamorous, but it taught me a different kind of discipline, and it's stuck with me since.",
+  "From there, I launched my own e-commerce brand in women's fashion, where I learned the full stack of running a DTC business: sourcing, paid acquisition, fulfillment, customer retention, the parts nobody sees on the outside.",
+  "Eventually, I brought everything full circle into tech sales, joining Yotpo as a Sales Development Representative, now selling the tools that power the same kind of e-commerce brands I used to run.",
 ];
 
 const companies = [
   {
     name: "Yotpo — Global Demand Generation",
-    logo: null, // set to an image path/URL to use a real logo instead of the initial
+    logo: yotpoAsset.url,
+    logoBg: "#1E2AAE",
     logoInitial: "Y",
     description:
-      "Sales Development Representative at Yotpo, an e-commerce and retention marketing platform — selling the tools that power modern DTC brands. Role expanding as scope evolves.",
+      "Sales Development Representative at Yotpo, an e-commerce and retention marketing platform, selling the tools that power modern DTC brands. Role expanding as scope evolves.",
   },
   {
     name: "Keth Official — Co-Founder",
-    logo: null,
+    logo: kethAsset.url,
+    logoBg: "#ffffff",
     logoInitial: "K",
     description:
-      "Co-Founder of Keth Official, a direct-to-consumer fashion brand built and scaled independently — covering sourcing, paid acquisition, and fulfillment from the ground up.",
+      "Co-Founder of Keth Official, a direct-to-consumer fashion brand built and scaled independently, covering sourcing, paid acquisition, and fulfillment from the ground up.",
   },
   {
     name: "Ecommerce & Digital Marketing Specialist",
-    logo: null, // drop your icon path/URL here, e.g. "/ecommerce-icon.png"
+    logo: "/monogram-td.svg",
+    logoBg: "#0A0A0A",
     logoInitial: "E",
     description:
-      "Self-employed, Jan 2024 – Nov 2025 (1 yr 11 mos). Built and managed multiple direct-to-consumer brands from the ground up — overseeing product research, supplier sourcing, store development, Meta ad campaign execution, customer service, and fulfillment logistics. Developed SOPs for each area of the business to ensure smooth, scalable operations.",
+      "Self-employed, Jan 2024 to Nov 2025 (1 yr 11 mos). Built and managed multiple direct-to-consumer brands from the ground up, overseeing product research, supplier sourcing, store development, Meta ad campaign execution, customer service, and fulfillment logistics. Developed SOPs for each area of the business to ensure smooth, scalable operations.",
   },
 ];
 
 const quarters = [
   { label: "Q1", value: 117 },
   { label: "Q2", value: 100 },
-  { label: "Q3", value: 108, note: "Jul 100% · Aug 117% (in progress)" },
+  { label: "Q3", value: 121, note: "Jul 100%, Aug 142% (quarter closes Monday)" },
 ];
 
 const avgAttainment =
@@ -318,10 +326,10 @@ function TylerDigosSite() {
       {/* HERO */}
       <header className="relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
         <img
-          src="/hero-photo.jpg"
+          src={heroAsset.url}
           alt="Tyler Digos"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "center 20%" }}
+          style={{ objectPosition: "35% 18%" }}
         />
         {/* Replace src="/hero-photo.jpg" with your actual photo path/URL */}
         <div
@@ -371,8 +379,8 @@ function TylerDigosSite() {
             width: "85%",
             height: "70%",
             background: `radial-gradient(ellipse at center, ${colors.cream} 0%, transparent 65%)`,
-            filter: "blur(50px)",
-            opacity: 0.12,
+            filter: "blur(120px)",
+            opacity: 0.05,
             zIndex: -1,
           }}
         />
@@ -383,9 +391,10 @@ function TylerDigosSite() {
         >
           <div className="w-full md:w-64 aspect-[4/5] md:aspect-square rounded-2xl overflow-hidden shrink-0">
             <img
-              src="/about-photo.jpg"
+              src={aboutAsset.url}
               alt="Tyler Digos"
               className="w-full h-full object-cover"
+              style={{ objectPosition: "72% center" }}
             />
             {/* Replace src="/about-photo.jpg" with your actual photo path/URL */}
           </div>
@@ -416,8 +425,8 @@ function TylerDigosSite() {
             width: "85%",
             height: "70%",
             background: `radial-gradient(ellipse at center, ${colors.cream} 0%, transparent 65%)`,
-            filter: "blur(50px)",
-            opacity: 0.12,
+            filter: "blur(120px)",
+            opacity: 0.05,
             zIndex: -1,
           }}
         />
@@ -428,10 +437,10 @@ function TylerDigosSite() {
         >
           <div className="w-full md:w-64 aspect-[4/5] rounded-2xl overflow-hidden shrink-0">
             <img
-              src="/story-photo.jpg"
+              src={storyAsset.url}
               alt="Tyler Digos"
               className="w-full h-full object-cover"
-              style={{ objectPosition: "top" }}
+              style={{ objectPosition: "center 22%" }}
             />
             {/* Replace src="/story-photo.jpg" with your actual photo path/URL */}
           </div>
@@ -476,9 +485,9 @@ function TylerDigosSite() {
               style={{ background: colors.card, border: `1px solid ${colors.cardBorder}` }}
             >
               <div
-                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden"
+                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden p-3"
                 style={{
-                  background: colors.bg,
+                  background: c.logoBg ?? colors.bg,
                   border: `1px solid ${colors.divider}`,
                   color: colors.cream,
                   ...serif,
@@ -488,7 +497,7 @@ function TylerDigosSite() {
                   <img
                     src={c.logo}
                     alt={`${c.name} logo`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 ) : (
                   c.logoInitial
@@ -524,8 +533,8 @@ function TylerDigosSite() {
             width: "90%",
             height: "80%",
             background: `radial-gradient(ellipse at center, ${colors.cream} 0%, transparent 65%)`,
-            filter: "blur(60px)",
-            opacity: 0.12,
+            filter: "blur(140px)",
+            opacity: 0.05,
             zIndex: -1,
           }}
         />
@@ -571,21 +580,25 @@ function TylerDigosSite() {
         </h2>
         <div className="flex flex-wrap gap-4 mb-16">
           <a
-            href="#"
+            href="https://www.linkedin.com/in/tylerdigos/"
             className="flex items-center gap-2 px-5 py-3 rounded-sm text-sm tracking-wide transition-colors"
+            target="_blank"
+            rel="noreferrer"
             style={{ border: `1px solid ${colors.divider}`, color: colors.cream }}
           >
             <Linkedin className="w-4 h-4" /> LinkedIn
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/tylerdigos"
             className="flex items-center gap-2 px-5 py-3 rounded-sm text-sm tracking-wide transition-colors"
+            target="_blank"
+            rel="noreferrer"
             style={{ border: `1px solid ${colors.divider}`, color: colors.cream }}
           >
             <Instagram className="w-4 h-4" /> Instagram
           </a>
           <a
-            href="#"
+            href="mailto:Tyleramd1017@gmail.com"
             className="flex items-center gap-2 px-5 py-3 rounded-sm text-sm tracking-wide transition-colors"
             style={{ border: `1px solid ${colors.divider}`, color: colors.cream }}
           >
