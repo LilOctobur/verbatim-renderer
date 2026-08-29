@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Instagram, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
+import heroAsset from "@/assets/hero-photo.jpg.asset.json";
+import aboutAsset from "@/assets/about-photo.jpg.asset.json";
+import storyAsset from "@/assets/story-photo.jpg.asset.json";
+import yotpoAsset from "@/assets/yotpo-logo.png.asset.json";
+import kethAsset from "@/assets/keth-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: TylerDigosSite,
