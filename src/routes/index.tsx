@@ -326,7 +326,7 @@ function TylerDigosSite() {
       {/* HERO */}
       <header className="relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
         <img
-          src="/hero-photo.jpg"
+          src={heroAsset.url}
           alt="Tyler Digos"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "center 20%" }}
@@ -379,8 +379,8 @@ function TylerDigosSite() {
             width: "85%",
             height: "70%",
             background: `radial-gradient(ellipse at center, ${colors.cream} 0%, transparent 65%)`,
-            filter: "blur(50px)",
-            opacity: 0.12,
+            filter: "blur(120px)",
+            opacity: 0.05,
             zIndex: -1,
           }}
         />
@@ -391,7 +391,7 @@ function TylerDigosSite() {
         >
           <div className="w-full md:w-64 aspect-[4/5] md:aspect-square rounded-2xl overflow-hidden shrink-0">
             <img
-              src="/about-photo.jpg"
+              src={aboutAsset.url}
               alt="Tyler Digos"
               className="w-full h-full object-cover"
             />
@@ -424,8 +424,8 @@ function TylerDigosSite() {
             width: "85%",
             height: "70%",
             background: `radial-gradient(ellipse at center, ${colors.cream} 0%, transparent 65%)`,
-            filter: "blur(50px)",
-            opacity: 0.12,
+            filter: "blur(120px)",
+            opacity: 0.05,
             zIndex: -1,
           }}
         />
@@ -436,7 +436,7 @@ function TylerDigosSite() {
         >
           <div className="w-full md:w-64 aspect-[4/5] rounded-2xl overflow-hidden shrink-0">
             <img
-              src="/story-photo.jpg"
+              src={storyAsset.url}
               alt="Tyler Digos"
               className="w-full h-full object-cover"
               style={{ objectPosition: "top" }}
@@ -532,8 +532,8 @@ function TylerDigosSite() {
             width: "90%",
             height: "80%",
             background: `radial-gradient(ellipse at center, ${colors.cream} 0%, transparent 65%)`,
-            filter: "blur(60px)",
-            opacity: 0.12,
+            filter: "blur(140px)",
+            opacity: 0.05,
             zIndex: -1,
           }}
         />
