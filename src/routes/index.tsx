@@ -2,11 +2,11 @@ import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Instagram, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 import heroAsset from "@/assets/hero-photo.jpg.asset.json";
+import heroDesktopAsset from "@/assets/hero-desktop.jpg.asset.json";
 import aboutAsset from "@/assets/about-photo.jpg.asset.json";
 import storyAsset from "@/assets/story-photo.jpg.asset.json";
-import yotpoAsset from "@/assets/yotpo-logo.png.asset.json";
-import kethAsset from "@/assets/keth-logo.png.asset.json";
-import tdMonogramAsset from "@/assets/td-monogram.jpg.asset.json";
+import yotpoAsset from "@/assets/yotpo-logo-v2.png.asset.json";
+import kethAsset from "@/assets/keth-logo-v2.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: TylerDigosSite,
@@ -43,6 +43,14 @@ const colors = {
 const serif = { fontFamily: "'Playfair Display', Georgia, serif" };
 
 // ─────────────────────────────────────────────
+// HERO IMAGE FRAMING — edit these two values to reposition the hero crop
+// Format: "<horizontal> <vertical>" (e.g. "50% 15%")
+// ─────────────────────────────────────────────
+
+const HERO_OBJECT_POSITION_MOBILE = "35% 18%";
+const HERO_OBJECT_POSITION_DESKTOP = "50% 22%";
+
+// ─────────────────────────────────────────────
 // DATA
 // ─────────────────────────────────────────────
 
@@ -76,7 +84,7 @@ const companies = [
   },
   {
     name: "Ecommerce & Digital Marketing Specialist",
-    logo: tdMonogramAsset.url,
+    logo: "/monogram-td.svg",
     logoBg: "#0A0A0A",
     logoInitial: "E",
     description:
@@ -249,7 +257,6 @@ function TylerDigosSite() {
         .nav-link:hover { color: ${colors.cream} !important; }
         @media (min-width: 768px) {
           .hero-header { height: 85vh; min-height: 560px; }
-          .hero-img { object-position: 50% 12% !important; }
         }
       `}</style>
 
@@ -264,7 +271,7 @@ function TylerDigosSite() {
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
           {/* Left links (desktop) / spacer (mobile) */}
           <div
-            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1"
+            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1 justify-end pr-12"
             style={serif}
           >
             {navLinks.slice(0, 2).map((link) => (
@@ -280,14 +287,14 @@ function TylerDigosSite() {
           </div>
           <div className="md:hidden w-6" />
           <div
-            className="text-lg tracking-wide text-center"
+            className="text-lg tracking-wide text-center shrink-0"
             style={{ color: colors.cream, ...serif }}
           >
             T·D
           </div>
           {/* Right links (desktop) / hamburger (mobile) */}
           <div
-            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1 justify-end"
+            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1 justify-start pl-12"
             style={serif}
           >
             {navLinks.slice(2).map((link) => (
@@ -351,11 +358,19 @@ function TylerDigosSite() {
 
       {/* HERO */}
       <header className="hero-header relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+        {/* Mobile hero photo */}
         <img
           src={heroAsset.url}
           alt="Tyler Digos"
-          className="hero-img absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "35% 18%" }}
+          className="md:hidden absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: HERO_OBJECT_POSITION_MOBILE }}
+        />
+        {/* Desktop hero photo */}
+        <img
+          src={heroDesktopAsset.url}
+          alt="Tyler Digos"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: HERO_OBJECT_POSITION_DESKTOP }}
         />
         {/* Replace src="/hero-photo.jpg" with your actual photo path/URL */}
         <div
@@ -511,10 +526,9 @@ function TylerDigosSite() {
               style={{ background: colors.card, border: `1px solid ${colors.cardBorder}` }}
             >
               <div
-                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden p-1"
+                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden"
                 style={{
                   background: c.logoBg ?? colors.bg,
-                  border: `1px solid ${colors.divider}`,
                   color: colors.cream,
                   ...serif,
                 }}
@@ -523,7 +537,7 @@ function TylerDigosSite() {
                   <img
                     src={c.logo}
                     alt={`${c.name} logo`}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
                   c.logoInitial
