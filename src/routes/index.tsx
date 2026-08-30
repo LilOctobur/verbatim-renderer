@@ -271,7 +271,7 @@ function TylerDigosSite() {
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
           {/* Left links (desktop) / spacer (mobile) */}
           <div
-            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1"
+            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1 justify-end pr-12"
             style={serif}
           >
             {navLinks.slice(0, 2).map((link) => (
@@ -287,14 +287,14 @@ function TylerDigosSite() {
           </div>
           <div className="md:hidden w-6" />
           <div
-            className="text-lg tracking-wide text-center"
+            className="text-lg tracking-wide text-center shrink-0"
             style={{ color: colors.cream, ...serif }}
           >
             T·D
           </div>
           {/* Right links (desktop) / hamburger (mobile) */}
           <div
-            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1 justify-end"
+            className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] flex-1 justify-start pl-12"
             style={serif}
           >
             {navLinks.slice(2).map((link) => (
