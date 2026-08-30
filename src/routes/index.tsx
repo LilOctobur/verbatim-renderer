@@ -43,6 +43,14 @@ const colors = {
 const serif = { fontFamily: "'Playfair Display', Georgia, serif" };
 
 // ─────────────────────────────────────────────
+// HERO IMAGE FRAMING — edit these two values to reposition the hero crop
+// Format: "<horizontal> <vertical>" (e.g. "50% 15%")
+// ─────────────────────────────────────────────
+
+const HERO_OBJECT_POSITION_MOBILE = "35% 18%";
+const HERO_OBJECT_POSITION_DESKTOP = "50% 22%";
+
+// ─────────────────────────────────────────────
 // DATA
 // ─────────────────────────────────────────────
 
@@ -76,7 +84,7 @@ const companies = [
   },
   {
     name: "Ecommerce & Digital Marketing Specialist",
-    logo: tdMonogramAsset.url,
+    logo: "/monogram-td.svg",
     logoBg: "#0A0A0A",
     logoInitial: "E",
     description:
