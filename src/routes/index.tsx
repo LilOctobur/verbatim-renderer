@@ -48,7 +48,7 @@ const serif = { fontFamily: "'Playfair Display', Georgia, serif" };
 // ─────────────────────────────────────────────
 
 const HERO_OBJECT_POSITION_MOBILE = "35% 18%";
-const HERO_OBJECT_POSITION_DESKTOP = "50% 35%";
+const HERO_OBJECT_POSITION_DESKTOP = "50% 18%";
 
 // ─────────────────────────────────────────────
 // DATA
