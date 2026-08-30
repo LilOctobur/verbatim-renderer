@@ -48,7 +48,7 @@ const serif = { fontFamily: "'Playfair Display', Georgia, serif" };
 // ─────────────────────────────────────────────
 
 const HERO_OBJECT_POSITION_MOBILE = "35% 18%";
-const HERO_OBJECT_POSITION_DESKTOP = "50% 22%";
+const HERO_OBJECT_POSITION_DESKTOP = "50% 35%";
 
 // ─────────────────────────────────────────────
 // DATA
@@ -379,7 +379,7 @@ function TylerDigosSite() {
             background: `linear-gradient(to top, ${colors.bg} 0%, ${colors.bg}4d 60%, ${colors.bg}1a 100%)`,
           }}
         />
-        <div className="relative z-10 text-center px-4 w-full">
+        <div className="absolute inset-x-0 bottom-[18%] z-10 text-center px-4 w-full">
           <h1
             className="text-[13vw] sm:text-7xl md:text-9xl tracking-[0.03em] whitespace-nowrap leading-none"
             style={{
