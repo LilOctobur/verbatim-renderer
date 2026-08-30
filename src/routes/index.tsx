@@ -257,7 +257,6 @@ function TylerDigosSite() {
         .nav-link:hover { color: ${colors.cream} !important; }
         @media (min-width: 768px) {
           .hero-header { height: 85vh; min-height: 560px; }
-          .hero-img { object-position: 50% 12% !important; }
         }
       `}</style>
 
@@ -359,11 +358,19 @@ function TylerDigosSite() {
 
       {/* HERO */}
       <header className="hero-header relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+        {/* Mobile hero photo */}
         <img
           src={heroAsset.url}
           alt="Tyler Digos"
-          className="hero-img absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "35% 18%" }}
+          className="md:hidden absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: HERO_OBJECT_POSITION_MOBILE }}
+        />
+        {/* Desktop hero photo */}
+        <img
+          src={heroDesktopAsset.url}
+          alt="Tyler Digos"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: HERO_OBJECT_POSITION_DESKTOP }}
         />
         {/* Replace src="/hero-photo.jpg" with your actual photo path/URL */}
         <div
@@ -519,10 +526,9 @@ function TylerDigosSite() {
               style={{ background: colors.card, border: `1px solid ${colors.cardBorder}` }}
             >
               <div
-                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden p-1"
+                className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-3xl shrink-0 overflow-hidden"
                 style={{
                   background: c.logoBg ?? colors.bg,
-                  border: `1px solid ${colors.divider}`,
                   color: colors.cream,
                   ...serif,
                 }}
@@ -531,7 +537,7 @@ function TylerDigosSite() {
                   <img
                     src={c.logo}
                     alt={`${c.name} logo`}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
                   c.logoInitial
