@@ -95,7 +95,7 @@ const companies = [
 const quarters = [
   { label: "Q1", value: 117 },
   { label: "Q2", value: 100 },
-  { label: "Q3", value: 121, note: "Jul 100%, Aug 142% (quarter closes Monday)" },
+  { label: "Q3", value: 147, note: "Jul 100%, Aug 192%, Sep 150%" },
 ];
 
 const avgAttainment =
