@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Instagram, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
-import heroAsset from "@/assets/hero-photo.jpg.asset.json";
-import heroDesktopAsset from "@/assets/hero-desktop.jpg.asset.json";
+import tylerDigosAsset from "@/assets/tyler-digos.jpg.asset.json";
 import aboutAsset from "@/assets/about-photo.jpg.asset.json";
 import storyAsset from "@/assets/story-photo.jpg.asset.json";
 import yotpoAsset from "@/assets/yotpo-logo-v2.png.asset.json";
@@ -43,12 +42,9 @@ const colors = {
 const serif = { fontFamily: "'Playfair Display', Georgia, serif" };
 
 // ─────────────────────────────────────────────
-// HERO IMAGE FRAMING — edit these two values to reposition the hero crop
+// HERO IMAGE FRAMING — edit this value to reposition the hero crop
 // Format: "<horizontal> <vertical>" (e.g. "50% 15%")
-// ─────────────────────────────────────────────
-
-const HERO_OBJECT_POSITION_MOBILE = "35% 18%";
-const HERO_OBJECT_POSITION_DESKTOP = "50% 18%";
+const HERO_OBJECT_POSITION = "50% 28%";
 
 // ─────────────────────────────────────────────
 // DATA
@@ -255,9 +251,6 @@ function TylerDigosSite() {
         * { font-family: 'Inter', system-ui, sans-serif; box-sizing: border-box; }
         a { text-decoration: none; }
         .nav-link:hover { color: ${colors.cream} !important; }
-        @media (min-width: 768px) {
-          .hero-header { height: 85vh; min-height: 560px; }
-        }
       `}</style>
 
       {/* STICKY NAV */}
