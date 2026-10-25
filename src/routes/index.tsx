@@ -351,34 +351,26 @@ function TylerDigosSite() {
 
       {/* HERO */}
       <header className="hero-header relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
-        {/* Mobile hero photo */}
         <img
-          src={heroAsset.url}
+          src={tylerDigosAsset.url}
           alt="Tyler Digos"
-          className="md:hidden absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: HERO_OBJECT_POSITION_MOBILE }}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: HERO_OBJECT_POSITION }}
         />
-        {/* Desktop hero photo */}
-        <img
-          src={heroDesktopAsset.url}
-          alt="Tyler Digos"
-          className="hidden md:block absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: HERO_OBJECT_POSITION_DESKTOP }}
-        />
-        {/* Replace src="/hero-photo.jpg" with your actual photo path/URL */}
+        {/* Dark gradient at the bottom so the title stays readable over the dark shirt */}
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(to top, ${colors.bg} 0%, ${colors.bg}4d 60%, ${colors.bg}1a 100%)`,
+            background: `linear-gradient(to top, ${colors.bg} 0%, ${colors.bg}e6 16%, ${colors.bg}99 30%, ${colors.bg}40 52%, ${colors.bg}1a 78%, ${colors.bg}0d 100%)`,
           }}
         />
-        <div className="absolute inset-x-0 bottom-[18%] z-10 text-center px-4 w-full">
+        {/* Title anchored to the bottom of the hero, below the face */}
+        <div className="absolute inset-x-0 bottom-0 z-10 text-center px-4 pb-24 w-full">
           <h1
-            className="text-[13vw] sm:text-7xl md:text-9xl tracking-[0.03em] whitespace-nowrap leading-none"
+            className="text-[16vw] leading-[0.95] sm:whitespace-nowrap sm:text-7xl md:text-9xl md:leading-none tracking-[0.03em]"
             style={{
               color: colors.cream,
               opacity: 0.92,
-              mixBlendMode: "overlay",
               ...serif,
             }}
           >
