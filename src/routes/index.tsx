@@ -371,7 +371,7 @@ function TylerDigosSite() {
         {/* Title anchored to the bottom of the hero, below the face */}
         <div className="absolute inset-x-0 bottom-0 z-10 text-center px-4 pb-24 w-full">
           <h1
-            className="text-[16vw] leading-[0.95] sm:whitespace-nowrap sm:text-7xl md:text-9xl md:leading-none tracking-[0.03em]"
+            className="text-[16vw] leading-[0.95] sm:whitespace-nowrap sm:text-7xl lg:text-9xl lg:leading-none tracking-[0.03em]"
             style={{
               color: colors.cream,
               opacity: 0.92,
