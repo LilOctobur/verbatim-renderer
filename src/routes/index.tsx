@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Instagram, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
-import tylerDigosAsset from "@/assets/tyler-digos.jpg.asset.json";
+import heroDesktopAsset from "@/assets/hero-desktop.jpg.asset.json";
+import heroMobileAsset from "@/assets/hero-mobile.jpg.asset.json";
 import aboutAsset from "@/assets/about-photo.jpg.asset.json";
 import storyAsset from "@/assets/story-photo.jpg.asset.json";
 import yotpoAsset from "@/assets/yotpo-logo-v2.png.asset.json";
@@ -43,8 +44,8 @@ const serif = { fontFamily: "'Playfair Display', Georgia, serif" };
 
 // ─────────────────────────────────────────────
 // HERO IMAGE FRAMING — edit this value to reposition the hero crop
-// Format: "<horizontal> <vertical>" (e.g. "50% 15%")
-const HERO_OBJECT_POSITION = "50% 28%";
+// Format: "<horizontal> <vertical>" (e.g. "50% 15%") or "center"
+const HERO_OBJECT_POSITION = "center";
 
 // ─────────────────────────────────────────────
 // DATA
@@ -350,13 +351,16 @@ function TylerDigosSite() {
       </nav>
 
       {/* HERO */}
-      <header className="hero-header relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
-        <img
-          src={tylerDigosAsset.url}
-          alt="Tyler Digos"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: HERO_OBJECT_POSITION }}
-        />
+      <header className="hero-header relative h-[100svh] md:h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+        <picture className="absolute inset-0">
+          <source media="(min-width: 768px)" srcSet={heroDesktopAsset.url} />
+          <img
+            src={heroMobileAsset.url}
+            alt="Tyler Digos"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: HERO_OBJECT_POSITION }}
+          />
+        </picture>
         {/* Dark gradient at the bottom so the title stays readable over the dark shirt */}
         <div
           className="absolute inset-0"
