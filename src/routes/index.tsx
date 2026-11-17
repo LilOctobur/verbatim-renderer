@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Instagram, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
-import heroDesktopAsset from "@/assets/hero-desktop.jpg.asset.json";
-import heroMobileAsset from "@/assets/hero-mobile.jpg.asset.json";
+import heroAsset from "@/assets/hero-color.jpg.asset.json";
 import aboutAsset from "@/assets/about-photo.jpg.asset.json";
 import storyAsset from "@/assets/story-photo.jpg.asset.json";
 import yotpoAsset from "@/assets/yotpo-logo-v2.png.asset.json";
@@ -352,15 +351,12 @@ function TylerDigosSite() {
 
       {/* HERO */}
       <header className="hero-header relative h-[100svh] md:h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
-        <picture className="absolute inset-0">
-          <source media="(min-width: 768px)" srcSet={heroDesktopAsset.url} />
-          <img
-            src={heroMobileAsset.url}
-            alt="Tyler Digos"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: HERO_OBJECT_POSITION }}
-          />
-        </picture>
+        <img
+          src={heroAsset.url}
+          alt="Tyler Digos"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: HERO_OBJECT_POSITION }}
+        />
         {/* Dark gradient at the bottom so the title stays readable over the dark shirt */}
         <div
           className="absolute inset-0"
