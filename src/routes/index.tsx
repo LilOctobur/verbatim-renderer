@@ -42,9 +42,10 @@ const colors = {
 const serif = { fontFamily: "'Playfair Display', Georgia, serif" };
 
 // ─────────────────────────────────────────────
-// HERO IMAGE FRAMING — edit this value to reposition the hero crop
+// HERO IMAGE FRAMING — edit these values to reposition the hero crop
 // Format: "<horizontal> <vertical>" (e.g. "50% 15%") or "center"
-const HERO_OBJECT_POSITION = "center";
+const HERO_OBJECT_POSITION_MOBILE = "center";
+const HERO_OBJECT_POSITION_DESKTOP = "50% 12%";
 
 // ─────────────────────────────────────────────
 // DATA
@@ -354,8 +355,7 @@ function TylerDigosSite() {
         <img
           src={heroAsset.url}
           alt="Tyler Digos"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: HERO_OBJECT_POSITION }}
+          className="absolute inset-0 w-full h-full object-cover hero-img"
         />
         {/* Dark gradient at the bottom so the title stays readable over the dark shirt */}
         <div
