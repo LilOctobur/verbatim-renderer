@@ -45,7 +45,7 @@ const serif = { fontFamily: "'Playfair Display', Georgia, serif" };
 // HERO IMAGE FRAMING — edit these values to reposition the hero crop
 // Format: "<horizontal> <vertical>" (e.g. "50% 15%") or "center"
 const HERO_OBJECT_POSITION_MOBILE = "center";
-const HERO_OBJECT_POSITION_DESKTOP = "50% 12%";
+const HERO_OBJECT_POSITION_DESKTOP = "50% 18%";
 
 // ─────────────────────────────────────────────
 // DATA
