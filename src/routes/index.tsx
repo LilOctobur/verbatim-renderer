@@ -352,6 +352,7 @@ function TylerDigosSite() {
 
       {/* HERO */}
       <header className="hero-header relative h-[100svh] md:h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+        <style>{`.hero-img { object-position: ${HERO_OBJECT_POSITION_MOBILE}; } @media (min-width: 768px) { .hero-img { object-position: ${HERO_OBJECT_POSITION_DESKTOP}; } }`}</style>
         <img
           src={heroAsset.url}
           alt="Tyler Digos"
